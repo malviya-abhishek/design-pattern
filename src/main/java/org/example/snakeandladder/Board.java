@@ -44,6 +44,9 @@ public class Board {
     }
 
     int chainNextPosition(int start){
+        if(start == this.board.size()){
+            return start;
+        }
         Jump next = this.board.get(start);
         if(next == null){
             return start;
@@ -61,26 +64,26 @@ public class Board {
 
     public void run(){
         System.out.println("Snakes and ladders started");
-        Player winner = null;
-        while(winner == null){
+        while(this.players.size() > 0){
+            Boolean winner = false;
             Player currentPlayer = this.players.getFirst();
             this.players.removeFirst();
-            this.players.addLast(currentPlayer);
             int moveBy = this.rollDices();
             int nextPosition = moveBy + currentPlayer.getPosition();
-            if(nextPosition >= this.board.size()){
-                continue;
+            if(nextPosition  == this.board.size()){
+                winner = true;
+                System.out.println(currentPlayer.getName() + " completed the game ");
             }
-            if(nextPosition + 1 == this.board.size()){
-                winner = currentPlayer;
-                break;
+            if(nextPosition > this.board.size()){
+                continue;
             }
             nextPosition = this.chainNextPosition(nextPosition);
             System.out.println(currentPlayer.getName() + " moved  from " + currentPlayer.getPosition() + " to " + nextPosition);
             currentPlayer.setPosition(nextPosition);
-
+            if(!winner) {
+                this.players.addLast(currentPlayer);
+            }
         }
         System.out.println("Snakes and ladders ended");
-        System.out.println("and the winner is" + winner.getName());
     }
 }
