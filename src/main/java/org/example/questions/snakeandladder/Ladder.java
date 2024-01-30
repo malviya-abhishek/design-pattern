@@ -1,4 +1,4 @@
-package org.example.snakeandladder;
+package org.example.questions.snakeandladder;
 
 public class Ladder extends Jump{
     public Ladder(int start, int end) throws Exception {

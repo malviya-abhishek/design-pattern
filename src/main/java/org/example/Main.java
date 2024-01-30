@@ -1,13 +1,7 @@
 package org.example;
 
-import org.example.chainofresponsibilitypattern.CORPattern;
-import org.example.decoratorpattern.DecoratorPattern;
-import org.example.factorypattern.abstractfactory.AbstractFactoryPattern;
-import org.example.factorypattern.factory.FactoryPattern;
-import org.example.observerpattern.ObserverPattern;
-import org.example.snakeandladder.SnakeAndLadder;
-import org.example.stategypattern.StrategyPattern;
-import org.example.tictactoe.TicTacToe;
+import org.example.questions.snakeandladder.SnakeAndLadder;
+import org.example.splitwise.Splitwise;
 
 import java.util.ArrayList;
 
@@ -23,8 +17,10 @@ public class Main {
 //        patterns.forEach(Patterns::run);
 //        TicTacToe ticTacToe = new TicTacToe();
 //        ticTacToe.run();
-        SnakeAndLadder snakeAndLadder = new SnakeAndLadder();
-        snakeAndLadder.run();
+//        SnakeAndLadder snakeAndLadder = new SnakeAndLadder();
+//        snakeAndLadder.run();
+        Splitwise splitwise = new Splitwise();
+        splitwise.demo();
 
     }
 }

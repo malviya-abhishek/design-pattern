@@ -1,4 +1,4 @@
-package org.example.snakeandladder;
+package org.example.questions.snakeandladder;
 
 public class Player {
     int position;

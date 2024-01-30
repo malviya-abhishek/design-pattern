@@ -1,4 +1,4 @@
-package org.example.snakeandladder;
+package org.example.questions.snakeandladder;
 
 import java.util.ArrayList;
 import java.util.Collections;
